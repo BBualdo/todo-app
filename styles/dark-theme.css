@@ -21,5 +21,14 @@ header > .dark-theme-button {
 }
 
 .dark-theme .todo {
-  color: var(--lightGrayishBlue3);
+  color: var(--lightGrayishBlue2);
+}
+
+.dark-theme .todo-list {
+  background-color: var(--veryDarkDesaturatedBlue);
+  border-bottom: 1px solid var(--veryDarkGrayishBlue2);
+}
+
+.dark-theme .todo-list p {
+  color: var(--lightGrayishBlue2);
 }

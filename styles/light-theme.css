@@ -23,3 +23,12 @@ header > .light-theme-button {
 .light-theme .todo {
   color: var(--veryDarkGrayishBlue1);
 }
+
+.light-theme .todo-list {
+  background-color: var(--veryLightGray);
+  border-bottom: 1px solid var(--lightGrayishBlue1);
+}
+
+.light-theme .todo-list p {
+  color: var(--veryDarkGrayishBlue1);
+}
