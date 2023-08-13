@@ -12,9 +12,9 @@
 
     --veryLightGray: hsl(0, 0%, 98%);
     --veryLightGrayishBlue: hsl(236, 33%, 92%);
-    --lightGrayishBlue: hsl(233, 11%, 84%);
+    --lightGrayishBlue1: hsl(233, 11%, 84%);
     --darkGrayishBlue: hsl(236, 9%, 61%);
-    --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+    --veryDarkGrayishBlue1: hsl(235, 19%, 35%);
 
     /* ### Dark Theme */
 
@@ -23,8 +23,8 @@
     --lightGrayishBlue2: hsl(234, 39%, 85%);
     --lightGrayishBlue3: hsl(236, 33%, 92%); /* (hover) */
     --darkGrayishBlue2: hsl(234, 11%, 52%);
-    --veryDarkGrayishBlue4: hsl(233, 14%, 35%);
-    --veryDarkGrayishBlue5: hsl(237, 14%, 26%);
+    --veryDarkGrayishBlue2: hsl(233, 14%, 35%);
+    --veryDarkGrayishBlue3: hsl(237, 14%, 26%);
 }
 
 * {
@@ -88,4 +88,43 @@ header > .light-theme-button {
 
 header > .dark-theme-button {
   background-image: url(../images/icon-moon.svg);
+}
+
+.todo-input {
+  background-color: var(--veryDarkDesaturatedBlue);
+  border-radius: 4px;
+  display: flex;
+  margin-top: 40px;
+  padding: 20px;
+  width: 540px;
+}
+
+.checkbox {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid var(--veryDarkGrayishBlue3);
+  border-radius: 50%;
+  height: 24px;
+  width: 26px;
+}
+
+.checkbox:hover {
+  border: double 1px transparent;
+  border-radius: 30px;
+  background-image: linear-gradient(var(--veryDarkDesaturatedBlue), var(--veryDarkDesaturatedBlue)), 
+                    linear-gradient(var(--checkBackground));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.todo-input-container .todo {
+  background-color: transparent;
+  border: none;
+  margin-left: 20px;
+  outline: none;
+  width: 100%;
+}
+
+.todo-input-container .todo::placeholder {
+  color: var(--darkGrayishBlue2);
 }
