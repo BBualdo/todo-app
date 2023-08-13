@@ -1,0 +1,25 @@
+.light-theme {
+  background-color: var(--veryLightGray);
+  background-image: url(../images/bg-desktop-light.jpg);
+}
+
+header > .light-theme-button {
+  background-image: url(../images/icon-sun.svg);
+}
+
+.light-theme .todo-input {
+  background-color: var(--veryLightGray);
+}
+
+.light-theme .checkbox {
+  border: 1px solid var(--lightGrayishBlue1);
+}
+
+.light-theme .checkbox:hover {
+  background-image: linear-gradient(var(--veryLightGray), var(--veryLightGray)), 
+                    linear-gradient(var(--checkBackground));
+}
+
+.light-theme .todo {
+  color: var(--veryDarkGrayishBlue1);
+}

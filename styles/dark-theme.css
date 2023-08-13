@@ -1,0 +1,25 @@
+.dark-theme {
+  background-color: var(--veryDarkBlue);
+  background-image: url(../images/bg-desktop-dark.jpg);
+}
+
+header > .dark-theme-button {
+  background-image: url(../images/icon-moon.svg);
+}
+
+.dark-theme .todo-input {
+  background-color: var(--veryDarkDesaturatedBlue);
+}
+
+.dark-theme .checkbox {
+  border: 1px solid var(--veryDarkGrayishBlue3);
+}
+
+.dark-theme .checkbox:hover {
+  background-image: linear-gradient(var(--veryDarkDesaturatedBlue), var(--veryDarkDesaturatedBlue)), 
+  linear-gradient(var(--checkBackground));
+}
+
+.dark-theme .todo {
+  color: var(--lightGrayishBlue3);
+}

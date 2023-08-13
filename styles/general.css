@@ -39,16 +39,6 @@ body {
   background-position: top center;
 }
 
-.dark-theme {
-  background-color: var(--veryDarkBlue);
-  background-image: url(../images/bg-desktop-dark.jpg);
-}
-
-.light-theme {
-  background-color: var(--veryLightGray);
-  background-image: url(../images/bg-desktop-light.jpg);
-}
-
 main {
   align-items: center;
   display: flex;
@@ -82,16 +72,7 @@ header > button {
   width: 26px;
 }
 
-header > .light-theme-button {
-  background-image: url(../images/icon-sun.svg);
-}
-
-header > .dark-theme-button {
-  background-image: url(../images/icon-moon.svg);
-}
-
 .todo-input {
-  background-color: var(--veryDarkDesaturatedBlue);
   border-radius: 4px;
   display: flex;
   margin-top: 40px;
@@ -102,7 +83,6 @@ header > .dark-theme-button {
 .checkbox {
   appearance: none;
   background-color: transparent;
-  border: 1px solid var(--veryDarkGrayishBlue3);
   border-radius: 50%;
   height: 24px;
   width: 26px;
@@ -111,13 +91,11 @@ header > .dark-theme-button {
 .checkbox:hover {
   border: double 1px transparent;
   border-radius: 30px;
-  background-image: linear-gradient(var(--veryDarkDesaturatedBlue), var(--veryDarkDesaturatedBlue)), 
-                    linear-gradient(var(--checkBackground));
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 
-.todo-input-container .todo {
+.todo {
   background-color: transparent;
   border: none;
   margin-left: 20px;
