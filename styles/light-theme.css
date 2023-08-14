@@ -36,3 +36,15 @@ header > .light-theme-button {
 .light-theme .nav-bar-container {
   background-color: var(--veryLightGray);
 }
+
+.light-theme .items-left p {
+  color: var(--darkGrayishBlue);
+}
+
+.light-theme .clear-completed-button {
+  color: var(--darkGrayishBlue);
+}
+
+.light-theme .nav-bar-container button:hover {
+  color: var(--veryDarkGrayishBlue1);
+}

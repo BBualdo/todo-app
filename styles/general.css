@@ -114,7 +114,7 @@ header > button {
   background: linear-gradient(var(--checkBackground));
 }
 
-.checkbox:checked:after {
+.checkbox:checked::after {
   display: block;
 }
 
@@ -164,16 +164,15 @@ header > button {
 }
 
 .items-left p {
-  color: var(--darkGrayishBlue); /* light-theme */
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .nav-bar-container button {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 12px;
-  padding: 16px 8px;
+  font-size: 14px;
+  padding: 20px 8px;
 }
 
 .category-button {
@@ -181,6 +180,6 @@ header > button {
   font-weight: bold;
 }
 
-.clear-completed-button {
-  color: var(--darkGrayishBlue); /* light-theme */
+.is-toggled {
+  color: var(--brightBlue);
 }
