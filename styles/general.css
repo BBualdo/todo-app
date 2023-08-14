@@ -154,3 +154,33 @@ header > button {
 .todo-list p {
   margin-left: 20px;
 }
+
+.nav-bar-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 540px;
+}
+
+.items-left p {
+  color: var(--darkGrayishBlue); /* light-theme */
+  font-size: 12px;
+}
+
+.nav-bar-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 16px 8px;
+}
+
+.category-button {
+  color: var(--darkGrayishBlue2);
+  font-weight: bold;
+}
+
+.clear-completed-button {
+  color: var(--darkGrayishBlue); /* light-theme */
+}
