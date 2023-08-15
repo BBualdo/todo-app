@@ -33,6 +33,10 @@ header > .dark-theme-button {
   color: var(--lightGrayishBlue2);
 }
 
+.dark-theme .completed p {
+  color: var(--veryDarkGrayishBlue2);
+}
+
 .dark-theme .nav-bar-container {
   background-color: var(--veryDarkDesaturatedBlue);
 }

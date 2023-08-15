@@ -1,4 +1,11 @@
-const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
+const todoList = /* JSON.parse(localStorage.getItem('todoList')) || */ [
+  {name: 'Complete online JavaScript course'},
+  {name: 'Jog around the park 3x'},
+  {name: '10 minutes meditation'},
+  {name: 'Read for 1 hour'},
+  {name: 'Pick up groceries'},
+  {name: 'Complete Todo App on Frontend Mentor'},
+];
 
 renderTodoList();
 
@@ -28,7 +35,14 @@ function renderTodoList() {
         renderTodoList();
     });
   });
+  markAsCompleted();
+
   localStorage.setItem('todoList', JSON.stringify(todoList));
+
+  const itemsLeft = document.querySelector('.items-left');
+  itemsLeft.innerHTML = `
+  <p>${todoList.length} items left</p>
+  `
 };
 
 document.querySelector('.todo')
@@ -51,3 +65,17 @@ function addTodo() {
 
   localStorage.setItem('todoList', JSON.stringify(todoList));
 };
+
+function markAsCompleted() {
+    const todo = document.querySelector('.todo-list')
+    document.querySelectorAll('.checkbox')
+      .forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          if (checkbox.checked) {
+            todo.classList.add('completed');
+          } else {
+            todo.classList.remove('completed');
+          };
+        });
+      });
+  };
