@@ -1,45 +1,53 @@
-/* 
-TODO:
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
-  - checking checkbox changes text color and adds cross line
-  - implement 3 lists :
-    - Completed = all todos with checked checkbox
-    - Active = all todos without checked checkbox
-    - All = Completed + Active
-  - clicking on elements on the navbar displays proper list
-  - Clear Completed removes all todos with checked checkbox
-  - items left shows number of todos without checked checkbox
-*/
+renderTodoList();
 
-const todoInput = document.querySelector('.todo');
-const todoPlaceholder = document.querySelector('.todo-list-container');
-const deleteButtons = document.querySelectorAll('.delete-button');
-let html = '';
-
-todoInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    addTodo()
-  }
-})
-
-// adds todo to the list
-function addTodo() {
-  html = `
-  <div class="todo-list">
-    <input class="checkbox" type="checkbox">
-    <div class="todo-content">
-      <p>${todoInput.value}</p>
-      <button onclick="
-      removeTodo()
-      " class="delete-button"></button>
+function renderTodoList() {
+  let todoListHTML = '';
+  
+  todoList.forEach((todoObject) => {
+    const {name} = todoObject;
+    const html = `
+    <div class="todo-list">
+      <input class="checkbox" type="checkbox">
+      <div class="todo-content">
+        <p>${name}</p>
+        <button class="delete-button"></button>
+      </div>
     </div>
-  </div>`
+    `;
+    todoListHTML += html;
+  });
 
-  todoPlaceholder.innerHTML += html;
-  todoInput.value = '';
-}
-// removes todo from a list
-function removeTodo() {
-  let todo = document.querySelector('.todo-list');
-  todo.remove();
-}
+  document.querySelector('.todo-list-container').innerHTML = todoListHTML;
+
+  document.querySelectorAll('.delete-button')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todoList.splice(index, 1);
+        renderTodoList();
+    });
+  });
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+};
+
+document.querySelector('.todo')
+  .addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      addTodo();
+      console.log(todoList);
+    };
+  });
+
+function addTodo() {
+  const inputElement = document.querySelector('.todo');
+  const name = inputElement.value
+  
+  todoList.push({name});
+  
+  inputElement.value = '';
+
+  renderTodoList();
+
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+};
