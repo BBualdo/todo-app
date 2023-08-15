@@ -1,8 +1,6 @@
 /* 
 TODO:
 
-  - taking value from input and showing it in the list
-  - working delete buttons which remove its parent from the list 
   - checking checkbox changes text color and adds cross line
   - implement 3 lists :
     - Completed = all todos with checked checkbox
@@ -15,20 +13,33 @@ TODO:
 
 const todoInput = document.querySelector('.todo');
 const todoPlaceholder = document.querySelector('.todo-list-container');
+const deleteButtons = document.querySelectorAll('.delete-button');
 let html = '';
 
 todoInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
-    html = `
-    <div class="todo-list">
-      <input class="checkbox" type="checkbox">
-      <div class="todo-content">
-        <p>${todoInput.value}</p>
-        <button class="delete-button"></button>
-      </div>
-  </div>`
-
-    todoPlaceholder.innerHTML += html;
-    todoInput.value = '';
+    addTodo()
   }
 })
+
+// adds todo to the list
+function addTodo() {
+  html = `
+  <div class="todo-list">
+    <input class="checkbox" type="checkbox">
+    <div class="todo-content">
+      <p>${todoInput.value}</p>
+      <button onclick="
+      removeTodo()
+      " class="delete-button"></button>
+    </div>
+  </div>`
+
+  todoPlaceholder.innerHTML += html;
+  todoInput.value = '';
+}
+// removes todo from a list
+function removeTodo() {
+  let todo = document.querySelector('.todo-list');
+  todo.remove();
+}
