@@ -67,15 +67,14 @@ function addTodo() {
 };
 
 function markAsCompleted() {
-    const todo = document.querySelector('.todo-list')
-    document.querySelectorAll('.checkbox')
-      .forEach((checkbox) => {
-        checkbox.addEventListener('change', () => {
-          if (checkbox.checked) {
-            todo.classList.add('completed');
-          } else {
-            todo.classList.remove('completed');
-          };
-        });
+    document.querySelectorAll('.todo-list').forEach((todoList) => {
+      const checkbox = todoList.querySelector('.checkbox');
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          todoList.classList.add('completed');
+        } else {
+          todoList.classList.remove('completed');
+        };
       });
+    })
   };
