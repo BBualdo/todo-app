@@ -1,10 +1,10 @@
-const todoList = /* JSON.parse(localStorage.getItem('todoList')) || */ [
+const todoList =  /* JSON.parse(localStorage.getItem('todoList')) || */[
   {name: 'Complete online JavaScript course'},
   {name: 'Jog around the park 3x'},
   {name: '10 minutes meditation'},
   {name: 'Read for 1 hour'},
   {name: 'Pick up groceries'},
-  {name: 'Complete Todo App on Frontend Mentor'},
+  {name: 'Complete Todo App on Frontend Mentor'}
 ];
 
 renderTodoList();
@@ -35,6 +35,7 @@ function renderTodoList() {
         renderTodoList();
     });
   });
+  
   markAsCompleted();
 
   localStorage.setItem('todoList', JSON.stringify(todoList));
@@ -52,7 +53,7 @@ document.querySelector('.todo')
       console.log(todoList);
     };
   });
-
+// Add Todo logic
 function addTodo() {
   const inputElement = document.querySelector('.todo');
   const name = inputElement.value
@@ -65,16 +66,28 @@ function addTodo() {
 
   localStorage.setItem('todoList', JSON.stringify(todoList));
 };
-
+// Mark as 'Completed' logic
 function markAsCompleted() {
-    document.querySelectorAll('.todo-list').forEach((todoList) => {
-      const checkbox = todoList.querySelector('.checkbox');
+    document.querySelectorAll('.todo-list').forEach((todo) => {
+      const checkbox = todo.querySelector('.checkbox');
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
-          todoList.classList.add('completed');
+          todo.classList.add('completed');
         } else {
-          todoList.classList.remove('completed');
+          todo.classList.remove('completed');
         };
       });
     })
   };
+
+  // Clear Completed logic
+  const clearButton = document.querySelector('.clear-completed-button');
+  clearButton.addEventListener('click', () => {
+    document.querySelectorAll('.todo-list')
+      .forEach((todo) => {
+        if (todo.classList.contains('completed')) {
+          todoList.splice(todo, 1);
+        }
+      }) 
+    renderTodoList();
+  })
