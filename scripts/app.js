@@ -1,4 +1,4 @@
-const todoList =  /* JSON.parse(localStorage.getItem('todoList')) || */[
+let todoList =  /* JSON.parse(localStorage.getItem('todoList')) || */[
   {name: 'Complete online JavaScript course'},
   {name: 'Jog around the park 3x'},
   {name: '10 minutes meditation'},
@@ -84,10 +84,9 @@ function markAsCompleted() {
   const clearButton = document.querySelector('.clear-completed-button');
   clearButton.addEventListener('click', () => {
     document.querySelectorAll('.todo-list')
-      .forEach((todo) => {
+      .forEach((todo, index) => {
         if (todo.classList.contains('completed')) {
-          todoList.splice(todo, 1);
-        }
+          todoList.splice(index, 1);
+        };
       }) 
-    renderTodoList();
   })
