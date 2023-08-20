@@ -89,4 +89,5 @@ function markAsCompleted() {
           todoList.splice(index, 1);
         };
       }) 
+    renderTodoList();
   })
