@@ -75,8 +75,8 @@ document.querySelector('.todo')
 function addTodo() {
   const inputElement = document.querySelector('.todo');
   const name = inputElement.value
-  const complition = todoList.[todoList.length].completed // ?
-  todoList.push({name, complition = false});
+  const complition = todoList[todoList.length].completed // ?
+  todoList.push({name, complition: false});
   
   inputElement.value = '';
 
