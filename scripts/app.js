@@ -75,7 +75,7 @@ document.querySelector('.todo')
 function addTodo() {
   const inputElement = document.querySelector('.todo');
   const name = inputElement.value
-  const complition = todoList.completed
+  const complition = todoList.[todoList.length].completed // ?
   todoList.push({name, complition = false});
   
   inputElement.value = '';
@@ -86,13 +86,15 @@ function addTodo() {
 };
 // Mark as 'Completed' logic
 function markAsCompleted() {
-    document.querySelectorAll('.todo-list').forEach((todo) => {
+    todoList.forEach((todo, index) => { // ?
       const checkbox = todo.querySelector('.checkbox');
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
           todo.classList.add('completed');
+          todoList[index].completed = true; // ?
         } else {
           todo.classList.remove('completed');
+          todoList[index].completed = false; // ?
         };
       });
     })
