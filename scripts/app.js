@@ -75,7 +75,6 @@ document.querySelector('.todo')
 function addTodo() {
   const inputElement = document.querySelector('.todo');
   const name = inputElement.value
-  
   todoList.push({name});
   
   inputElement.value = '';
