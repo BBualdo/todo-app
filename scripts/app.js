@@ -67,7 +67,7 @@ function addTodo() {
 };
 // Mark as 'Completed' logic
 function markAsCompleted() {
-    document.querySelectorAll('.todo-list).forEach((todo) => {
+    document.querySelectorAll('.todo-list').forEach((todo) => {
       const checkbox = todo.querySelector('.checkbox');
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
