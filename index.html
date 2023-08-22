@@ -26,8 +26,8 @@
     </header>
     <section class="todo-input-container">
       <div class="todo-input">
-        <input class="checkbox" type="checkbox">
-        <input class="todo" placeholder="Create a new todo...">
+        <input id="add-task" class="checkbox" type="checkbox">
+        <input id="input-add-task" class="todo" placeholder="Create a new todo...">
       </div>
     </section>
     <section class="todo-list-container">
@@ -35,10 +35,10 @@
     </section>
     <section class="nav-bar-container">
       <div class="items-left">
-        <p>5 items left</p>
+        <p id="items-count"><!--Items left--></p>
       </div>
       <div class="categories">
-        <button class="category-button">
+        <button class="category-button is-toggled">
           All
         </button>
         <button class="category-button">

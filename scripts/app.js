@@ -1,10 +1,28 @@
 let todoList =  /* JSON.parse(localStorage.getItem('todoList')) || */[
-  {name: 'Complete online JavaScript course'},
-  {name: 'Jog around the park 3x'},
-  {name: '10 minutes meditation'},
-  {name: 'Read for 1 hour'},
-  {name: 'Pick up groceries'},
-  {name: 'Complete Todo App on Frontend Mentor'}
+  {
+    name: 'Complete online JavaScript course',
+    completed: false  
+  },
+  {
+    name: 'Jog around the park 3x',
+    completed: false
+  },
+  {
+    name: '10 minutes meditation',
+    completed: false
+  },
+  {
+    name: 'Read for 1 hour',
+    completed: false
+  },
+  {
+    name: 'Pick up groceries',
+    completed: false
+  },
+  {
+    name: 'Complete Todo App on Frontend Mentor',
+    completed: false
+  }
 ];
 
 renderTodoList();
@@ -87,7 +105,7 @@ function markAsCompleted() {
       .forEach((todo, index) => {
         if (todo.classList.contains('completed')) {
           todoList.splice(index, 1);
+          renderTodoList();
         };
       }) 
-    renderTodoList();
   })
