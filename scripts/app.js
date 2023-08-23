@@ -57,7 +57,7 @@ function renderTodoList(list) {
         }>
         <div class="todo-content">
           <p>${task.name}</p>
-          <button class="delete-button">Delete</button>
+          <button class="delete-button"></button>
         </div>
       </div>
     `; //2
