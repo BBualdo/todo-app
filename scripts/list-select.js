@@ -1,5 +1,3 @@
-const categoryButtons = document.querySelectorAll('.category-button');
-
 categoryButtons.forEach((button) => {
   button.addEventListener('click', () => {
     toggleOff();
